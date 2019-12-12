@@ -5,7 +5,7 @@
       <span v-if="hasChildren" class="type">{{expanded ? '&#9660;' : '&#9668;'}}</span>
       <span :style="getStyle(node)" @click="enableEditing">{{node.name}}</span>
       <button @click='addNodes'>إضافة</button>
-       <button @click='DeleteNodes'>حذف</button>
+      <button @click='DeleteNodes()'>حذف</button>
 
     </div>
      <div v-if="editing">
@@ -13,6 +13,7 @@
     </div>
     <ul v-if="expanded">
       <TreeBrowser v-for="child in node.children" :key="child.name" :node="child" :depth="depth + 1" @onClick="(node) => $emit('onClick', node)" />
+
     </ul>
   </div>
 </template>
@@ -67,8 +68,10 @@
         this.disableEditing();
       },
       DeleteNodes() {
-        return this.node.children.remove()
+         this.node.children.splice(this.child);
+
       }
+
 
     },
     computed: {
