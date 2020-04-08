@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <TreeView :node='root' />
+    <FormProfile></FormProfile>
   </div>
 </template>
 
 <script>
-import TreeView from './components/TreeView.vue'
+import FormProfile from './components/form-profile.vue';
 
 export default {
   name: 'app',
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    TreeView
+    FormProfile
   }
 }
 </script>
@@ -49,10 +49,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 100px;
-  background-color:#eee;
-  width:400px;
-  direction: rtl;
+  width:700px;
+  direction: ltr;
   margin:0 auto;
-  border:4px solid red;
+  border:4px solid #eee;
 }
 </style>
